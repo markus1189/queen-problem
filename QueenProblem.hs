@@ -22,10 +22,10 @@ template n = do
 
 solution :: [(Int, Int)] -> Logic [(Int, Int)]
 solution []              = return []
-solution ((x,y) : other) = do
-    guard $ noAttack (x, y) other
-    sol <- solution other
-    return $ (x,y) : sol
+solution (queen : other) = do
+    guard $ queen `noAttack` other
+    otherSolutions <- solution other
+    return $ queen : otherSolutions
 
 noAttack _       []                = True
 noAttack (x1,y1) ((x2,y2) : other) =
