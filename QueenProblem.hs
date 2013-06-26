@@ -4,7 +4,7 @@ import Control.Monad.Logic.Class
 
 {-
     This code is inspired by the prolog solution at
-    http://rosettacode.org/wiki/N-queens_problem#Prolog
+    http://www.javaist.com/blog/2008/11/06/eight-queens-problem-in-prolog/
 -}
 
 template :: Int -> Logic [(Int, Int)]
